@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -12,28 +13,27 @@
 
 	<build>
 		<sourceDirectory>${basedir}/src/com/oracle/adbaoverjdbc</sourceDirectory>
-        <testSourceDirectory>${basedir}/test</testSourceDirectory>
+		<testSourceDirectory>${basedir}/test</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<source>1.9</source>
-					<target>1.9</target>
-                    <compilerArgs>
-				        <arg>--add-modules=jdk.incubator.adba</arg>
-    				</compilerArgs>
-				</configuration>                
+					<release>10</release>
+					<compilerArgs>
+						<arg>--add-modules=jdk.incubator.adba</arg>
+					</compilerArgs>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
-	<dependencies>		
+	<dependencies>
 		<dependency>
 			<groupId>jdk.incubator.adba</groupId>
-        	<artifactId>ADBA</artifactId>
-        	<version>52117.4f7713e6a308</version>
+			<artifactId>ADBA</artifactId>
+			<version>52117.4f7713e6a308</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -42,9 +42,9 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 </project>
