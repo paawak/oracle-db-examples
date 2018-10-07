@@ -20,6 +20,8 @@ import static com.oracle.adbaoverjdbc.JdbcConnectionProperties.JDBC_CONNECTION_P
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 
@@ -62,12 +64,9 @@ public class MysqlTest {
             });
 
         }
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
+        ForkJoinPool.commonPool().awaitQuiescence(1, TimeUnit.MINUTES);
+
     }
 
 }
